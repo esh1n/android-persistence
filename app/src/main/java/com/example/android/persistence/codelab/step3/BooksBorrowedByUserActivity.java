@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.android.codelabs.persistence.R;
@@ -55,8 +56,12 @@ public class BooksBorrowedByUserActivity extends AppCompatActivity {
     }
 
     private void subscribeUiBooks() {
-        // TODO: refresh the list of books when there's new data
-        // mViewModel.books.observe(...
+        mViewModel.books.observe(this, new Observer<List<Book>>() {
+            @Override
+            public void onChanged(List<Book> books) {
+                showBooksInUi(books);
+            }
+        });
     }
 
     @SuppressWarnings("unused")
