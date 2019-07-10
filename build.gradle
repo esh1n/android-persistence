@@ -22,7 +22,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.4.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -41,10 +41,8 @@ task clean(type: Delete) {
 }
 
 ext {
-    supportLibVersion = "27.0.0"
-    runnerVersion = "1.0.1"
-    rulesVersion = "1.0.1"
-    espressoVersion = "3.0.1"
-    archLifecycleVersion = "1.0.0"
-    archRoomVersion = "1.0.0"
+    androidxCompat = "1.1.0-rc01"
+    androidxMaterial = "1.1.0-alpha07"
+    archLifecycleVersion = "2.2.0-alpha02"
+    archRoomVersion = "2.1.0"
 }
